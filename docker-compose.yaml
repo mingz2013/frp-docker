@@ -5,6 +5,7 @@ services:
 #    volumes:
 #     - "./config:/config"
 #    ports:
+#     - "7000:7000/udp"
 #     - "7000:7000"
 #    command: /frp/frps -c /config/frps.ini
 #    restart: always
@@ -14,3 +15,8 @@ services:
     - ./config:/config
     command: /frp/frpc -c /config/frpc_client.ini
     restart: always
+    ports:
+      - 3389:3389/udp
+      - 3390:3390/udp
+      - 3389:3389
+      - 3390:3390
