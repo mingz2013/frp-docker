@@ -1,6 +1,8 @@
 .PHONY: help
 help:
-	@echo 'build docker'
+	@echo 'build-docker'
+	@echo 'up'
+	@echo 'down'
 
 
 .PHONY: build-docker
@@ -10,3 +12,11 @@ build-docker:
 	docker build . -t mingz2013/frp
 	docker push mingz2013/frp
 
+
+.PHONY: up
+up:
+	docker-compose up -d
+
+.PHONY: down
+down:
+	docker-compose down
