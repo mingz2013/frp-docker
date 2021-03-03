@@ -1,0 +1,10 @@
+<service>
+    <id>frpservice</id>
+    <name>frp service</name>
+    <description>frpservice</description>
+    <executable>frpc</executable>
+    <arguments>-c frpc.ini</arguments>
+    <onfailure action="restart" delay="60 sec"/>
+    <onfailure action="restart" delay="120 sec"/>
+    <logmode>reset</logmode>
+</service>
