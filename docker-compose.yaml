@@ -1,16 +1,16 @@
 version: "3.7"
 services:
-  frps:
-    image: mingz2013/frp
-    volumes:
-     - "./config:/config"
-    ports:
-     - "7000:7000"
-    command: /frp/frps -c /config/frps.ini
-    restart: always
-#  frpc:
+#  frps:
 #    image: mingz2013/frp
 #    volumes:
-#    - ./config:/config
-#    command: /frp/frpc -c /config/frpc.ini
+#     - "./config:/config"
+#    ports:
+#     - "7000:7000"
+#    command: /frp/frps -c /config/frps.ini
 #    restart: always
+  frpc:
+    image: mingz2013/frp
+    volumes:
+    - ./config:/config
+    command: /frp/frpc -c /config/frpc_client.ini
+    restart: always
